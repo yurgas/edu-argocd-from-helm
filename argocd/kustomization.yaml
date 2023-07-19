@@ -12,5 +12,6 @@ helmCharts:
 
 resources:
 - base/argocd.yaml
+- base/applications.yaml
 
 namespace: argocd

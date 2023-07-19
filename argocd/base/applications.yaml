@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: applications
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/yurgas/edu-argocd-from-helm.git"
+    path: apps
+    targetRevision: main
+  destination:
+    namespace: argocd
+    name: in-cluster
+  syncPolicy:
+    automated: {}
