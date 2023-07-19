@@ -10,27 +10,37 @@ controller:
     enabled: true
     serviceMonitor:
       enabled: true
+      selector:
+        release: prometheus
 
 redis:
   metrics:
     enabled: true
     serviceMonitor:
       enabled: true
+      selector:
+        release: prometheus
 
 repoServer:
   metrics:
     enabled: true
     serviceMonitor:
       enabled: true
+      selector:
+        release: prometheus
 
 applicationSet:
   metrics:
     enabled: true
     serviceMonitor:
       enabled: true
+      selector:
+        release: prometheus
 
 notifications:
   metrics:
       enabled: true
       serviceMonitor:
         enabled: true
+      selector:
+        release: prometheus
