@@ -4,3 +4,8 @@ configs:
 
 dex:
   enabled: false
+
+controller:
+  metrics:
+    serviceMonitor:
+      enabled: true
