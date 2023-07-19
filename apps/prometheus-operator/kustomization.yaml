@@ -5,10 +5,10 @@ kind: Kustomization
 # - crds.yaml
 
 helmCharts:
-- name: prometheus
+- name: kube-prometheus-stack
   repo: https://prometheus-community.github.io/helm-charts
   version: 48.1.1
-  releaseName: prometheus-operator
+  releaseName: prometheus
   namespace: prometheus-operator
   valuesFile: values.yaml
   includeCRDs: true
