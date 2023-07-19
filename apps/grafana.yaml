@@ -18,7 +18,7 @@ spec:
             datasources:
             - name: Prometheus
               type: prometheus
-              url: http://prometheus-kube-prometheus-prometheus.prometheus-operator
+              url: http://prometheus-kube-prometheus-prometheus.prometheus-operator:9090
               access: proxy
               isDefault: true          
         dashboardProviders:
