@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: grafana
+  project: default
+  source:
+    helm:
+      releaseName: grafana
+    chart: grafana
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: 6.58.4
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
