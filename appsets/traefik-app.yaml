@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+        - project: default
+          cluster: in-cluster
+          revision: 10.15.0
+  template:
+    metadata:
+      name: 'traefik-{{cluster}}'
+    spec:
+      project: '{{project}}'
+      source:
+        chart: traefik
+        repoURL: https://helm.traefik.io/traefik
+        targetRevision: '{{revision}}'
+        helm:
+          values: |
+            deployment:
+              podAnnotations:
+                "cluster-autoscaler.kubernetes.io/safe-to-evict": "true"
+            globalArguments: []
+      destination:
+        namespace: traefik
+        name: '{{cluster}}'
+      syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true
+
