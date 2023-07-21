@@ -13,7 +13,12 @@ kustomize build --enable-helm argocd | kubectl apply -f -
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
-4. Connect to argocd webservice
+4. Connect to Argocd webservice
 ```
 kubectl port-forward service/argocd-server -n argocd 8090:443
+```
+5. Connect to Grafana
+```
+kubectl port-forward service/grafana -n grafana 3000:80
+kubectl -n grafana get secret grafana -o jsonpath="{.data.admin-password}" | base64 -d
 ```
