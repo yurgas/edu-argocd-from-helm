@@ -1,6 +1,6 @@
 global:
   image:
-    tag: "v2.8.7"
+    tag: "v2.10.13"
 
 configs:
   cm:
