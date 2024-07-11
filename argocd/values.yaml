@@ -2,6 +2,9 @@ global:
   image:
     tag: "v2.10.13"
 
+  logging:
+    level: warn
+
 configs:
   cm:
     kustomize.buildOptions: --enable-helm
