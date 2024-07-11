@@ -16,23 +16,14 @@ controller:
       enabled: true
       selector:
         release: prometheus
-
-redis-ha:
-  enabled: true
+        
+redis:
   metrics:
     enabled: true
     serviceMonitor:
       enabled: true
       selector:
         release: prometheus
-        
-# redis:
-#   metrics:
-#     enabled: true
-#     serviceMonitor:
-#       enabled: true
-#       selector:
-#         release: prometheus
 
 server:
   metrics:
