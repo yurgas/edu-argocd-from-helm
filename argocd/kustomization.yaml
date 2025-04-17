@@ -7,7 +7,7 @@ helmCharts:
   namespace: argocd
   valuesFile: values.yaml
   releaseName: argocd
-  version: 7.3.11
+  version: 7.7.23
   # fix Capabilities.APIVersions issue
   # https://github.com/argoproj/argo-helm/pull/2154
   # https://github.com/kubernetes-sigs/kustomize/issues/3458
