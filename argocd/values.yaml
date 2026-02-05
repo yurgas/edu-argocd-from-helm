@@ -1,6 +1,6 @@
 global:
   image:
-    tag: "v2.14.21"
+    tag: "v3.0.23"
 
   logging:
     level: warn
