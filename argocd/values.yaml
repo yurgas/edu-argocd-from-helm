@@ -1,6 +1,6 @@
 global:
   image:
-    tag: "v2.13.6"
+    tag: "v2.14.21"
 
   logging:
     level: warn
@@ -8,6 +8,7 @@ global:
 configs:
   cm:
     kustomize.buildOptions: --enable-helm
+    application.resourceTrackingMethod: annotation
 
 dex:
   enabled: false
